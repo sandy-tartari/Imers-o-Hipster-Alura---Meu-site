@@ -1,10 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body {
     background-size: auto 100vh;
-    font-family: cursive;
-    background-image: linear-gradient( to bottom right, rgb(45, 45, 221),rgb(164, 164, 202));
+    font-family: 'Roboto Mono', monospace;
+    background-image: linear-gradient(to right bottom, #DC9364, #ffffff) ;
+    font-size: 12px;
+    background-size: cover;
 }
+
+/* se a tela tiver pelo menos 370px vai carregar estes estilos */
+@media(min-width: 370px) {
+    body{
+        font-size: 14px;
+    }
+}
+/* se a tela tiver pelo menos 400px vai carregar estes estilos */
+@media(min-width: 400px) {
+    body{
+        font-size: 14px;
+    }
+}
+
+/* se a tela tiver pelo menos 600px vai carregar estes estilos */
+@media(min-width: 600px) {
+    body{
+        font-size: 18px;
+    }
+}
+header{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* .titulo{
+    transform: scale(0.2) translateY(50vh);
+    opacity: 0;
+
+    animation: ease-in-out 2s animacaotitulo forwards;
+}
+@keyframes animacaotitulo {
+    from{
+    transform: scale(0.2) translateY(50vh);
+    opacity: 0;
+    }
+    to{
+    transform: scale(1) translateY(0);
+    opacity: 1;
+    }
+} */
+
 .menu {
-    background-color: white;
+    border-bottom: 1px solid #F19960;
+    background-color: #ffffff;
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    z-index: 9999;
 }
 .menu ul {
     display: flex;
@@ -15,20 +70,93 @@ body {
   }
   
 .menu a {
-    color: teal;
+    color:#EC7527;
     padding: 10px;
     text-decoration: none;
+    display: block;
+    padding: 10px 20px;
+    transition: background-color 1s, color 1s;
 }
-  
+.menu a:hover{
+  background-color: #EC8F52;
+  color: whitesmoke;
+}
+.site-subtitle,
+.site-title{
+    color: #000000;
+    text-align: center;
+}
 .site-title {
-    color: whitesmoke;
+    font-size: 4em;
+    font-family: 'Kalam', cursive;
+}
+.site-subtitle {
+    font-style: italic;
+    font-size: 2em;
+    font-family: 'Kalam', cursive;
+
+}
+.portfolio{
+    padding: 2em;
+    min-height: 100vh;
+}
+.portfolio h2{
+    text-align: center;
+    margin-top: 10px;
+}
+.contato,
+.portfolio h2{
+    font-family: 'Jost', sans-serif;
+    margin-bottom: 0.5em;
+}
+.portfolio .grid{
+    display: grid;
+    gap: 2em;
+}
+@media(min-width: 560px){
+    .portfolio .grid{
+        grid-template-columns: repeat(2, 240px);
+        align-items: center;
+    }
+}
+@media(min-width: 600px){
+    .portfolio .grid{
+        grid-template-columns: repeat(2, 240px);
+        align-content: center;
+        justify-content: center;
+    }
+}
+@media(min-width: 890px){
+    .portfolio .grid{
+        grid-template-columns: repeat(4, 230px);
+        align-content: center;
+        justify-content: center;
+        height: calc(100vh - 8.5em - 48px);
+    }
+}
+.portfolio figure{
     text-align: center;
 }
-  
-.site-subtitle {
-    color: whitesmoke;
-    font-style: italic;
-    font-weight: lighter;
+.portfolio figure a{
+    text-decoration: none;
+    color: #000000;
+}
+.img-portfolio{
+    width: 200px;
+    height: 200px;
+    transition: transform 500ms;
+}
+.img-portfolio:hover{
+    transform: scale(1.1);
+
+}
+.contato .icons{
     text-align: center;
-    font-size: 2em;
+    height: 60vh;
+    line-height: 2;
+}
+.contato a{
+    color:#000000;
+    font-size: 4em;
+    text-decoration:none;  
 }
